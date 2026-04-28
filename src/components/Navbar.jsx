@@ -95,11 +95,25 @@ function Navbar() {
 
         <button
           type="button"
-          className="rounded-md border border-slate-300 bg-white px-3 py-1.5 text-sm font-medium text-slate-700 transition duration-200 hover:border-[#7a1f2b] hover:text-[#7a1f2b] md:hidden"
+          className="relative flex h-10 w-10 items-center justify-center rounded-md border border-slate-300 bg-white text-slate-700 transition duration-200 hover:border-[#7a1f2b] hover:text-[#7a1f2b] md:hidden"
           onClick={() => setIsOpen((prev) => !prev)}
-          aria-label="Toggle menu"
+          aria-label={isOpen ? "Close menu" : "Open menu"}
         >
-          {isOpen ? "Close" : "Menu"}
+          <span
+            className={`absolute h-0.5 w-5 bg-current transition-all duration-300 ${
+              isOpen ? "translate-y-0 rotate-45" : "-translate-y-1.5 rotate-0"
+            }`}
+          />
+          <span
+            className={`absolute h-0.5 w-5 bg-current transition-all duration-300 ${
+              isOpen ? "opacity-0" : "opacity-100"
+            }`}
+          />
+          <span
+            className={`absolute h-0.5 w-5 bg-current transition-all duration-300 ${
+              isOpen ? "translate-y-0 -rotate-45" : "translate-y-1.5 rotate-0"
+            }`}
+          />
         </button>
       </nav>
 

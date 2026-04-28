@@ -8,6 +8,7 @@ function PortfolioPage() {
   const remainingProjects = projects.filter((project) => project.title !== "Greencodex Technologies Landing Page");
   const linkedInUrl = contactLinks.find((item) => item.label === "LinkedIn")?.href;
   const githubUrl = contactLinks.find((item) => item.label === "GitHub")?.href;
+  const emailUrl = contactLinks.find((item) => item.label === "Email")?.href;
 
   return (
     <main id="home">
@@ -20,7 +21,8 @@ function PortfolioPage() {
           <h1 className="fade-in type-hero-name text-slate-900">Rithika Shree Yuvaraj</h1>
           <p className="fade-in delay-1 type-hero-role mt-4 text-[#7a1f2b]">Full Stack Developer</p>
           <p className="fade-in delay-2 type-body mx-auto mt-3 max-w-2xl text-slate-600">
-            I build scalable web and mobile applications using React, Node.js, and Flutter.
+            I build end-to-end web and mobile products with scalable architecture, secure backend services, and
+            intuitive user experiences.
           </p>
 
           <div className="mt-7 flex items-center justify-center gap-3">
@@ -131,8 +133,8 @@ function PortfolioPage() {
               <a
                 key={item.label}
                 href={item.href}
-                target={item.label === "Phone" || item.label === "Email" ? undefined : "_blank"}
-                rel={item.label === "Phone" || item.label === "Email" ? undefined : "noreferrer"}
+                target={item.label === "Phone" ? undefined : "_blank"}
+                rel={item.label === "Phone" ? undefined : "noreferrer"}
                 className="btn-transition type-card-text block rounded-lg border border-slate-200 bg-white px-4 py-3 text-slate-700 hover:border-[#7a1f2b]"
               >
                 <span className="type-label text-slate-900">{item.label}:</span> {item.value}
@@ -141,7 +143,7 @@ function PortfolioPage() {
           </div>
           <div className="mt-5">
             <a
-              href="https://mail.google.com/mail/?view=cm&fs=1&to=rithikashreey07@gmail.com"
+              href={emailUrl}
               target="_blank"
               rel="noreferrer"
               className="btn-transition type-button inline-block rounded-md bg-[#7a1f2b] px-5 py-2.5 text-white hover:bg-[#5f1722]"
